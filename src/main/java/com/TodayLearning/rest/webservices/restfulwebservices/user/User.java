@@ -11,10 +11,11 @@ public class User
 {
        private int id;
        @Size(min=2,message = "Name should have atleast 2 characters")
-       @JsonProperty("user_name")
+       @JsonProperty("user_name")   // this is basically used to customize the rest api response we get in json format 
        private String name;
        
        @Past(message = "Birthdate should be in past")
+       @JsonProperty("birth_date")
        private LocalDate birthDate;
        
 	public User(int id, String name, LocalDate birthDate) {
